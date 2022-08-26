@@ -172,13 +172,12 @@ foodArr.push(breadsticks)
 
 //CODE HERE
 
-const filteredFood = foodArr.filter((tag) => {
-    if(foodArr.tags){
-        return foodArr[tag]
+const filterFood = foodArr.filter((food) => {
+    if(food.tags.includes('kids')){
+        return food
     }
 })
-console.log(filteredFood)
-
+console.log(filterFood)
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -219,29 +218,23 @@ console.log(filteredFood)
 */
 
 //CODE HERE
-// const filterByProperty = ((property, number, type, ) => {
-//     let filterArr = []
-//     foodArr.filter((property,number, type) => {
-//         console.log
-//         if(type === 'above'){
-//             if(this.property > number){
-//                 filterArr.push(foodArr)
-//             }
-//         }else if(type === 'below'){
-//             if(this.property < number){
-//                 filterArr.push(foodArr)
-//             }
-//         }
-//     })
-//     return filterArr
-// })
+const filterByProperty = (property, number, type) => {
+    const filteredFood = foodArr.filter((food) =>{
+        if(type === 'above'){
+            return food[property] >= number
+        }else{
+            return food[property] < number
+        }
+    })
+    return filteredFood
+}
 
 /*
     Invoke the `filterByProperty` function passing
-    in a value for each paramter.
+    in a value for each parameter.
 
     You'll have to console.log to see the filtered array
 */
 
 //CODE HERE
-//console.log(filterByProperty(this.popularity, 4, 'above' ))
+console.log(filterByProperty('popularity', 4, 'above'))

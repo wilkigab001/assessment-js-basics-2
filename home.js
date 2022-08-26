@@ -83,9 +83,6 @@ function canWeDeliverTwo(array, zipCode){
     for(i = 0; i < array.length; ++i){
         if(array[i] === zipCode){
             return "You're in our delivery zone!"
-            break;
-        }else{
-
         }
     }
     return "Sorry, we can't deliver to that address."
@@ -125,14 +122,14 @@ const deals = [
     to replace the 15 with a 10.
 */
 
-const filterDeals = deals.filter((el) => {
-    if(el.title.includes('15')){
-        let {title} = el
-        el.title = title.replace('15%', '10%')
-        return el.title
-    }
-})
-
+// const filterDeals = deals.filter((el) => {
+//     if(el.title.includes('15')){
+//         let {title} = el
+//         el.title = title.replace('15%', '10%')
+//         return el.title
+//     }
+// })
+deals[0].title = deals[0].title.replace('15%', '10%')
 
 //console.log(deals)
 /*
@@ -151,13 +148,13 @@ const filterDeals = deals.filter((el) => {
 //CODE HERE
 
 
-const filterDealsTwo = deals.filter((el) => {
-    if(el.desc.includes('March')){
-        let {desc} = el
-        el.desc = desc.replace('March', 'April')
-        el.desc = el.desc.trim()
-        return el.desc
-    }
-})
-
-//console.log(deals)
+// const filterDealsTwo = deals.filter((el) => {
+//     if(el.desc.includes('March')){
+//         let {desc} = el
+//         el.desc = desc.replace('March', 'April')
+//         el.desc = el.desc.trim()
+//         return el.desc
+//     }
+// })
+deals[1].desc = deals[1].desc.trim().replace('March', 'April') 
+console.log(deals)
